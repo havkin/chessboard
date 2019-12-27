@@ -1,1 +1,2 @@
 renderer.renderBoard();
+position.setup();

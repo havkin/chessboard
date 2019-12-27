@@ -1,6 +1,6 @@
 
-const cols = ['0', '8', '7', '6', '5', '4', '3', '2', '1', '0'];
-const rows = ['0', 'a', 'b', 'c', 'd', 'f', 'e', 'g', 'h', '0'];
+const ranks = ['0', '8', '7', '6', '5', '4', '3', '2', '1', '0'];
+const files = ['0', 'a', 'b', 'c', 'd', 'f', 'e', 'g', 'h', '0'];
 
 const playerSet = 'white';
 
@@ -25,10 +25,10 @@ let renderer = {
         let cellColor = '';
         let cellNumber = 0;
 
-        cols.forEach(col => {
+        ranks.forEach(rank => {
             board += "<tr>";
-            rows.forEach(row => {
-                if (col === '0' || row === '0') {
+            files.forEach(file => {
+                if (rank === '0' || file === '0') {
                     cellColor = 'edgeCell';
                 } else if (cellNumber % 2 === 0) {
                     cellColor = 'darkCell';
@@ -37,7 +37,7 @@ let renderer = {
                     cellColor = 'lightCell';
                     cellNumber++; 
                 }
-                board += `<td data-x="${row}" data-y="${col}" class="${cellColor}"></td>`;
+                board += `<td data-x="${file}" data-y="${rank}" class="${cellColor}"></td>`;
             });
             cellNumber++;
             board += "</tr>";
